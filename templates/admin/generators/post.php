@@ -172,7 +172,7 @@
                 
                 <div class="lorem-press-form-submit">
                     <input type="hidden" name="generator_type" value="post">
-                    <?php wp_nonce_field('modern_faker_nonce', 'nonce'); ?>
+                    <?php wp_nonce_field('lorem_press_nonce', 'nonce'); ?>
                     <button type="submit" class="button button-primary button-large"><?php echo esc_html__('Generate Posts', 'lorem-press'); ?></button>
                 </div>
             </form>
@@ -227,9 +227,9 @@
                 url: ajaxurl,
                 type: 'POST',
                 data: {
-                    action: 'modern_faker_get_taxonomies',
+                    action: 'lorem_press_get_taxonomies',
                     post_type: postType,
-                    nonce: '<?php echo wp_create_nonce('modern_faker_nonce'); ?>'
+                    nonce: '<?php echo wp_create_nonce('lorem_press_nonce'); ?>'
                 },
                 success: function(response) {
                     if (response.success) {
@@ -299,7 +299,7 @@
                 url: ajaxurl,
                 type: 'POST',
                 data: {
-                    action: 'modern_faker_generate',
+                    action: 'lorem_press_generate',
                     ...formData
                 },
                 beforeSend: function() {

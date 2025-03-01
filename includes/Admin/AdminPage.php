@@ -2,12 +2,12 @@
 /**
  * Admin Page class.
  *
- * @package ModernFaker\Admin
+ * @package LoremPress\Admin
  */
 
-namespace ModernFaker\Admin;
+namespace LoremPress\Admin;
 
-use ModernFaker\Plugin;
+use LoremPress\Plugin;
 
 /**
  * Class to handle admin UI and functionality.
@@ -30,7 +30,7 @@ class AdminPage {
         add_action('admin_menu', [$this, 'add_admin_menu']);
         
         // Register AJAX handlers
-        add_action('wp_ajax_modern_faker_generate', [$this, 'handle_generate_ajax']);
+        add_action('wp_ajax_lorem_press_generate', [$this, 'handle_generate_ajax']);
     }
 
     /**
@@ -41,9 +41,9 @@ class AdminPage {
     public function add_admin_menu(): void {
         // Add top-level menu
         $this->page_hook = add_menu_page(
-            __('Modern Faker', 'lorem-press'),
-            __('Modern Faker', 'lorem-press'),
-            'manage_modern_faker',
+            __('LoremPress', 'lorem-press'),
+            __('LoremPress', 'lorem-press'),
+            'manage_lorem_press',
             'lorem-press',
             [$this, 'render_main_page'],
             'dashicons-database-add',
@@ -55,7 +55,7 @@ class AdminPage {
             'lorem-press',
             __('Dashboard', 'lorem-press'),
             __('Dashboard', 'lorem-press'),
-            'manage_modern_faker',
+            'manage_lorem_press',
             'lorem-press',
             [$this, 'render_main_page']
         );
@@ -64,7 +64,7 @@ class AdminPage {
             'lorem-press',
             __('Generate Posts', 'lorem-press'),
             __('Posts', 'lorem-press'),
-            'manage_modern_faker',
+            'manage_lorem_press',
             'lorem-press-posts',
             [$this, 'render_posts_page']
         );
@@ -73,7 +73,7 @@ class AdminPage {
             'lorem-press',
             __('Generate Users', 'lorem-press'),
             __('Users', 'lorem-press'),
-            'manage_modern_faker',
+            'manage_lorem_press',
             'lorem-press-users',
             [$this, 'render_users_page']
         );
@@ -82,7 +82,7 @@ class AdminPage {
             'lorem-press',
             __('Generate Terms', 'lorem-press'),
             __('Terms', 'lorem-press'), 
-            'manage_modern_faker',
+            'manage_lorem_press',
             'lorem-press-terms',
             [$this, 'render_terms_page']
         );
@@ -91,7 +91,7 @@ class AdminPage {
             'lorem-press',
             __('Generate Comments', 'lorem-press'),
             __('Comments', 'lorem-press'),
-            'manage_modern_faker',
+            'manage_lorem_press',
             'lorem-press-comments',
             [$this, 'render_comments_page']
         );
@@ -100,7 +100,7 @@ class AdminPage {
             'lorem-press',
             __('Settings', 'lorem-press'),
             __('Settings', 'lorem-press'),
-            'manage_modern_faker',
+            'manage_lorem_press',
             'lorem-press-settings',
             [$this, 'render_settings_page']
         );
@@ -112,7 +112,7 @@ class AdminPage {
      * @return void
      */
     public function render_main_page(): void {
-        include MODERN_FAKER_PLUGIN_DIR . 'templates/admin/dashboard.php';
+        include LOREM_PRESS_PLUGIN_DIR . 'templates/admin/dashboard.php';
     }
 
     /**
@@ -124,7 +124,7 @@ class AdminPage {
         $post_generator = Plugin::get_instance()->get_generator('post');
         $settings_schema = $post_generator->get_settings_schema();
         
-        include MODERN_FAKER_PLUGIN_DIR . 'templates/admin/generators/post.php';
+        include LOREM_PRESS_PLUGIN_DIR . 'templates/admin/generators/post.php';
     }
 
     /**
@@ -136,7 +136,7 @@ class AdminPage {
         $user_generator = Plugin::get_instance()->get_generator('user');
         $settings_schema = $user_generator->get_settings_schema();
         
-        include MODERN_FAKER_PLUGIN_DIR . 'templates/admin/generators/user.php';
+        include LOREM_PRESS_PLUGIN_DIR . 'templates/admin/generators/user.php';
     }
 
     /**
@@ -148,7 +148,7 @@ class AdminPage {
         $term_generator = Plugin::get_instance()->get_generator('term');
         $settings_schema = $term_generator->get_settings_schema();
         
-        include MODERN_FAKER_PLUGIN_DIR . 'templates/admin/generators/term.php';
+        include LOREM_PRESS_PLUGIN_DIR . 'templates/admin/generators/term.php';
     }
 
     /**
@@ -160,7 +160,7 @@ class AdminPage {
         $comment_generator = Plugin::get_instance()->get_generator('comment');
         $settings_schema = $comment_generator->get_settings_schema();
         
-        include MODERN_FAKER_PLUGIN_DIR . 'templates/admin/generators/comment.php';
+        include LOREM_PRESS_PLUGIN_DIR . 'templates/admin/generators/comment.php';
     }
 
     /**
@@ -169,9 +169,9 @@ class AdminPage {
      * @return void
      */
     public function render_settings_page(): void {
-        $settings = get_option('modern_faker_settings', []);
+        $settings = get_option('lorem_press_settings', []);
         
-        include MODERN_FAKER_PLUGIN_DIR . 'templates/admin/settings.php';
+        include LOREM_PRESS_PLUGIN_DIR . 'templates/admin/settings.php';
     }
 
     /**
@@ -181,10 +181,10 @@ class AdminPage {
      */
     public function handle_generate_ajax(): void {
         // Check nonce for security
-        check_ajax_referer('modern_faker_nonce', 'nonce');
+        check_ajax_referer('lorem_press_nonce', 'nonce');
         
         // Check permissions
-        if (!current_user_can('manage_modern_faker')) {
+        if (!current_user_can('manage_lorem_press')) {
             wp_send_json_error([
                 'message' => __('You do not have permission to perform this action.', 'lorem-press'),
             ]);

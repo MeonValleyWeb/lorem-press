@@ -1,8 +1,8 @@
 {
-    "name": "your-vendor/lorem-press",
+    "name": "MeonValleyWeb/lorem-press",
     "description": "A modern content generator for WordPress with support for posts, users, terms, comments and meta fields.",
     "type": "wordpress-plugin",
-    "license": "GPL-2.0-or-later",
+    "license": "GPL-3.0-or-later",
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.0"
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ModernFaker\\": "includes/"
+            "LoremPress\\": "includes/"
         }
     },
     "scripts": {

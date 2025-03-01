@@ -2,10 +2,10 @@
 /**
  * Abstract Provider class.
  *
- * @package ModernFaker\Providers
+ * @package LoremPress\Providers
  */
 
-namespace ModernFaker\Providers;
+namespace LoremPress\Providers;
 
 /**
  * Abstract Provider class that all providers should extend.

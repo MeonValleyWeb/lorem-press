@@ -2,13 +2,13 @@
 /**
  * Abstract Generator class.
  *
- * @package ModernFaker\Generators
+ * @package LoremPress\Generators
  */
 
-namespace ModernFaker\Generators;
+namespace LoremPress\Generators;
 
-use ModernFaker\Providers\AbstractProvider;
-use ModernFaker\Providers\LoremProvider;
+use LoremPress\Providers\AbstractProvider;
+use LoremPress\Providers\LoremProvider;
 
 /**
  * Abstract Generator class that all generators should extend.

@@ -2,18 +2,18 @@
 /**
  * Main plugin class.
  *
- * @package ModernFaker
+ * @package LoremPress
  */
 
-namespace ModernFaker;
+namespace LoremPress;
 
-use ModernFaker\Admin\AdminPage;
-use ModernFaker\Generators\Post;
-use ModernFaker\Generators\Comment;
-use ModernFaker\Generators\User;
-use ModernFaker\Generators\Term;
-use ModernFaker\Generators\Meta;
-use ModernFaker\API\GeneratorEndpoint;
+use LoremPress\Admin\AdminPage;
+use LoremPress\Generators\Post;
+use LoremPress\Generators\Comment;
+use LoremPress\Generators\User;
+use LoremPress\Generators\Term;
+use LoremPress\Generators\Meta;
+use LoremPress\API\GeneratorEndpoint;
 
 /**
  * Main plugin class that bootstraps the plugin.
@@ -79,7 +79,7 @@ class Plugin {
         load_plugin_textdomain(
             'lorem-press',
             false,
-            dirname(plugin_basename(MODERN_FAKER_PLUGIN_FILE)) . '/languages'
+            dirname(plugin_basename(LOREM_PRESS_PLUGIN_FILE)) . '/languages'
         );
     }
 
@@ -98,22 +98,22 @@ class Plugin {
         // Register and enqueue CSS
         wp_register_style(
             'lorem-press-admin',
-            MODERN_FAKER_PLUGIN_URL . 'assets/css/admin.css',
+            LOREM_PRESS_PLUGIN_URL . 'assets/css/admin.css',
             [],
-            MODERN_FAKER_VERSION
+            lorem_press_VERSION
         );
         wp_enqueue_style('lorem-press-admin');
 
         // Register and enqueue JS
         wp_register_script(
             'lorem-press-admin',
-            MODERN_FAKER_PLUGIN_URL . 'assets/js/dist/admin.js',
+            LOREM_PRESS_PLUGIN_URL . 'assets/js/dist/admin.js',
             ['jquery', 'wp-api', 'wp-components', 'wp-element'],
-            MODERN_FAKER_VERSION,
+            lorem_press_VERSION,
             true
         );
 
-        wp_localize_script('lorem-press-admin', 'ModernFakerSettings', [
+        wp_localize_script('lorem-press-admin', 'LoremPressSettings', [
             'apiRoot' => esc_url_raw(rest_url()),
             'nonce' => wp_create_nonce('wp_rest'),
             'ajaxUrl' => admin_url('admin-ajax.php'),
@@ -154,7 +154,7 @@ class Plugin {
         $this->generators['meta'] = new Meta();
 
         // Allow other plugins to register generators
-        $this->generators = apply_filters('modern_faker_generators', $this->generators);
+        $this->generators = apply_filters('lorem_press_generators', $this->generators);
     }
 
     /**
@@ -185,8 +185,8 @@ class Plugin {
     public static function activate(): void {
         // Create required database tables or entries if needed
         // Set default options
-        if (!get_option('modern_faker_settings')) {
-            update_option('modern_faker_settings', [
+        if (!get_option('lorem_press_settings')) {
+            update_option('lorem_press_settings', [
                 'default_provider' => 'lorem',
                 'batch_size' => 10,
                 'image_source' => 'placeholder',
@@ -196,7 +196,7 @@ class Plugin {
         // Add capabilities to admin
         $admin_role = get_role('administrator');
         if ($admin_role) {
-            $admin_role->add_cap('manage_modern_faker');
+            $admin_role->add_cap('manage_lorem_press');
         }
 
         // Clear any cached data
@@ -214,7 +214,7 @@ class Plugin {
         // Remove capabilities
         $admin_role = get_role('administrator');
         if ($admin_role) {
-            $admin_role->remove_cap('manage_modern_faker');
+            $admin_role->remove_cap('manage_lorem_press');
         }
     }
 }

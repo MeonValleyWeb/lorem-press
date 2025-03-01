@@ -2,10 +2,10 @@
 /**
  * Lorem Provider class.
  *
- * @package ModernFaker\Providers
+ * @package LoremPress\Providers
  */
 
-namespace ModernFaker\Providers;
+namespace LoremPress\Providers;
 
 /**
  * Provider for generating Lorem Ipsum text and accessing lipsum.com API.

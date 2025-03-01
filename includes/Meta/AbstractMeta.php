@@ -2,13 +2,13 @@
 /**
  * Abstract Meta class.
  *
- * @package ModernFaker\Meta
+ * @package LoremPress\Meta
  */
 
-namespace ModernFaker\Meta;
+namespace LoremPress\Meta;
 
-use ModernFaker\Providers\AbstractProvider;
-use ModernFaker\Providers\LoremProvider;
+use LoremPress\Providers\AbstractProvider;
+use LoremPress\Providers\LoremProvider;
 
 /**
  * Abstract Meta class that all meta field generators should extend.

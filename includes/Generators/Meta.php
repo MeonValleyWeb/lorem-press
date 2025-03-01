@@ -2,23 +2,23 @@
 /**
  * Meta Generator class.
  *
- * @package ModernFaker\Generators
+ * @package LoremPress\Generators
  */
 
-namespace ModernFaker\Generators;
+namespace LoremPress\Generators;
 
-use ModernFaker\Meta\AbstractMeta;
-use ModernFaker\Meta\Number;
-use ModernFaker\Meta\Text;
-use ModernFaker\Meta\HTML;
-use ModernFaker\Meta\Person;
-use ModernFaker\Meta\Geo;
-use ModernFaker\Meta\Date;
-use ModernFaker\Meta\Company;
-use ModernFaker\Meta\Email;
-use ModernFaker\Meta\Domain;
-use ModernFaker\Meta\Image;
-use ModernFaker\Meta\Attachment;
+use LoremPress\Meta\AbstractMeta;
+use LoremPress\Meta\Number;
+use LoremPress\Meta\Text;
+use LoremPress\Meta\HTML;
+use LoremPress\Meta\Person;
+use LoremPress\Meta\Geo;
+use LoremPress\Meta\Date;
+use LoremPress\Meta\Company;
+use LoremPress\Meta\Email;
+use LoremPress\Meta\Domain;
+use LoremPress\Meta\Image;
+use LoremPress\Meta\Attachment;
 use WP_Error;
 
 /**
@@ -77,7 +77,7 @@ class Meta extends AbstractGenerator {
         ];
 
         // Allow plugins to register their own meta handlers
-        $this->meta_handlers = apply_filters('modern_faker_meta_handlers', $this->meta_handlers);
+        $this->meta_handlers = apply_filters('lorem_press_meta_handlers', $this->meta_handlers);
     }
 
     /**
@@ -100,7 +100,7 @@ class Meta extends AbstractGenerator {
         // Get or generate meta key
         $meta_key = $this->get_setting('meta_key');
         if (empty($meta_key)) {
-            $meta_key = 'faker_' . uniqid();
+            $meta_key = 'press_' . uniqid();
         }
 
         // Get meta type and config

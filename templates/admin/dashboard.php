@@ -1,10 +1,10 @@
 <div class="wrap lorem-press-admin">
-    <h1><?php echo esc_html__('Modern Faker', 'lorem-press'); ?></h1>
+    <h1><?php echo esc_html__('LoremPress', 'lorem-press'); ?></h1>
     
     <div class="lorem-press-dashboard">
         <div class="lorem-press-welcome">
-            <h2><?php echo esc_html__('Welcome to Modern Faker', 'lorem-press'); ?></h2>
-            <p><?php echo esc_html__('Modern Faker is a powerful content generator for WordPress. Use it to create realistic test data for your WordPress site including posts, users, comments, terms, and meta fields.', 'lorem-press'); ?></p>
+            <h2><?php echo esc_html__('Welcome to LoremPress', 'lorem-press'); ?></h2>
+            <p><?php echo esc_html__('LoremPress is a powerful content generator for WordPress. Use it to create realistic test data for your WordPress site including posts, users, comments, terms, and meta fields.', 'lorem-press'); ?></p>
         </div>
         
         <div class="lorem-press-cards">

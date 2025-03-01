@@ -1,5 +1,5 @@
 /**
- * Modern Faker Admin JavaScript
+ * LoremPress Admin JavaScript
  */
 
 // Import WordPress dependencies
@@ -11,14 +11,14 @@ import '../../css/admin.scss';
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize the Modern Faker admin interface
-  initModernFaker();
+  // Initialize the LoremPress admin interface
+  initLoremPress();
 });
 
 /**
- * Initialize Modern Faker functionality
+ * Initialize LoremPress functionality
  */
-function initModernFaker() {
+function initLoremPress() {
   // Generator form handling
   const generatorForm = document.querySelector('.lorem-press-generator-form form');
   if (generatorForm) {
@@ -55,7 +55,7 @@ function handleFormSubmit(event) {
 
   // Submit using WordPress API Fetch
   const data = {
-    action: 'modern_faker_generate'
+    action: 'lorem_press_generate'
   };
 
   // Convert FormData to object

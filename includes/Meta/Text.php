@@ -2,10 +2,10 @@
 /**
  * Text Meta Generator class.
  *
- * @package ModernFaker\Meta
+ * @package LoremPress\Meta
  */
 
-namespace ModernFaker\Meta;
+namespace LoremPress\Meta;
 
 /**
  * Generator for text meta values.

@@ -2,13 +2,13 @@
 /**
  * Post Generator class.
  *
- * @package ModernFaker\Generators
+ * @package LoremPress\Generators
  */
 
-namespace ModernFaker\Generators;
+namespace LoremPress\Generators;
 
-use ModernFaker\Meta\AbstractMeta;
-use ModernFaker\Utils\Sanitize;
+use LoremPress\Meta\AbstractMeta;
+use LoremPress\Utils\Sanitize;
 use WP_Error;
 
 /**
@@ -100,7 +100,7 @@ class Post extends AbstractGenerator {
         }
 
         // Apply filters to post data
-        $post_data = apply_filters('modern_faker_post_data', $post_data, $this->settings);
+        $post_data = apply_filters('lorem_press_post_data', $post_data, $this->settings);
         
         // Insert the post
         $post_id = wp_insert_post($post_data, true);
@@ -164,7 +164,7 @@ class Post extends AbstractGenerator {
             return false;
         }
 
-        $filename = wp_unique_filename($upload_dir['path'], 'faker-' . uniqid() . '.jpg');
+        $filename = wp_unique_filename($upload_dir['path'], 'press-' . uniqid() . '.jpg');
         $file_path = $upload_dir['path'] . '/' . $filename;
         file_put_contents($file_path, $image_data);
 
