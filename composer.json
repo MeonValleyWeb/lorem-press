@@ -1,0 +1,32 @@
+{
+    "name": "your-vendor/lorem-press",
+    "description": "A modern content generator for WordPress with support for posts, users, terms, comments and meta fields.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^2.3",
+        "phpunit/phpunit": "^9.0",
+        "yoast/phpunit-polyfills": "^1.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ModernFaker\\": "includes/"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=phpcs.xml",
+        "phpcbf": "phpcbf --standard=phpcs.xml",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

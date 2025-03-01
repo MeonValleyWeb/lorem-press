@@ -1,0 +1,318 @@
+/**
+ * Modern Faker Admin Styles
+ */
+
+// Variables
+$primary-color: #2271b1;
+$error-color: #d63638;
+$success-color: #00a32a;
+$border-color: #ccd0d4;
+$light-gray: #f0f0f0;
+$dark-gray: #50575e;
+
+// Dashboard
+.lorem-press-dashboard {
+  margin-top: 20px;
+
+  .lorem-press-welcome {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid $border-color;
+  }
+
+  .lorem-press-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .lorem-press-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .lorem-press-card-icon {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+  }
+
+  .lorem-press-stats {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+
+    .lorem-press-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .lorem-press-stat-item {
+      text-align: center;
+    }
+
+    .lorem-press-stat-number {
+      display: block;
+      font-size: 2em;
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    .lorem-press-stat-label {
+      display: block;
+      font-size: 1em;
+      color: $dark-gray;
+    }
+  }
+}
+
+// Generator
+.lorem-press-generator-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  margin-top: 20px;
+
+  .lorem-press-generator-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+  }
+
+  .lorem-press-generator-results {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+  }
+
+  .lorem-press-form-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .lorem-press-form-field {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  .lorem-press-form-field-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    label {
+      margin-bottom: 0;
+    }
+
+    input[type="number"] {
+      width: 80px;
+    }
+  }
+
+  .lorem-press-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .meta-field-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+
+    input,
+    select {
+      flex: 1;
+    }
+  }
+
+  .lorem-press-form-submit {
+    margin-top: 30px;
+  }
+
+  .lorem-press-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .lorem-press-progress-bar {
+    height: 20px;
+    background-color: $light-gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    .lorem-press-progress-bar-inner {
+      height: 100%;
+      background-color: $primary-color;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+  }
+
+  .lorem-press-progress-status {
+    text-align: center;
+    font-style: italic;
+  }
+
+  .lorem-press-results-list {
+    margin-bottom: 20px;
+  }
+
+  .lorem-press-result-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .dashicons {
+      color: $primary-color;
+    }
+  }
+
+  .lorem-press-error-message {
+    color: $error-color;
+    padding: 10px;
+    background-color: lighten($error-color, 45%);
+    border-left: 4px solid $error-color;
+  }
+
+  .lorem-press-errors-list {
+    margin-top: 20px;
+  }
+
+  .lorem-press-error-item {
+    color: $error-color;
+    padding: 5px 0;
+
+    .dashicons {
+      color: $error-color;
+    }
+  }
+
+  .lorem-press-no-results {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+// Settings
+.lorem-press-settings {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+  margin-top: 20px;
+
+  .lorem-press-settings-section {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .lorem-press-settings-field {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .description {
+      margin-top: 5px;
+      color: $dark-gray;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 782px) {
+  .lorem-press-dashboard .lorem-press-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lorem-press-generator-container {
+    grid-template-columns: 1fr;
+  }
+
+  .lorem-press-form-field-inline {
+    flex-direction: column;
+    align-items: flex-start;
+
+    input[type="number"] {
+      width: 100%;
+    }
+  }
+
+  .meta-field-row {
+    flex-direction: column;
+  }
+
+  .lorem-press-checkboxes {
+    grid-template-columns: 1fr;
+  }
+}
