@@ -1,40 +1,50 @@
 {
     "name": "lorem-press",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "A modern content generator for WordPress",
     "private": true,
     "scripts": {
-      "start": "webpack --watch --mode=development",
-      "build": "webpack --mode=production",
-      "lint": "eslint assets/js/src",
-      "lint:fix": "eslint assets/js/src --fix"
+        "start": "webpack --watch --mode=development",
+        "build": "webpack --mode=production",
+        "lint": "eslint assets/js/src",
+        "lint:fix": "eslint assets/js/src --fix",
+        "commit": "cz",
+        "release": "standard-version"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     },
     "dependencies": {
-      "@wordpress/api-fetch": "^6.0.0",
-      "@wordpress/components": "^19.0.0",
-      "@wordpress/element": "^4.0.0",
-      "@wordpress/i18n": "^4.0.0"
+        "@wordpress/api-fetch": "^6.0.0",
+        "@wordpress/components": "^19.0.0",
+        "@wordpress/element": "^4.0.0",
+        "@wordpress/i18n": "^4.0.0"
     },
     "devDependencies": {
-      "@babel/core": "^7.17.0",
-      "@babel/preset-env": "^7.16.0",
-      "@babel/preset-react": "^7.16.0",
-      "@wordpress/eslint-plugin": "^12.0.0",
-      "autoprefixer": "^10.4.0",
-      "babel-loader": "^8.2.0",
-      "css-loader": "^6.5.0",
-      "css-minimizer-webpack-plugin": "^4.0.0",
-      "eslint": "^8.7.0",
-      "mini-css-extract-plugin": "^2.5.0",
-      "postcss-loader": "^6.2.0",
-      "sass": "^1.49.0",
-      "sass-loader": "^12.4.0",
-      "style-loader": "^3.3.0",
-      "terser-webpack-plugin": "^5.3.0",
-      "webpack": "^5.68.0",
-      "webpack-cli": "^4.9.0"
+        "@babel/core": "^7.17.0",
+        "@babel/preset-env": "^7.16.0",
+        "@babel/preset-react": "^7.16.0",
+        "@wordpress/eslint-plugin": "^12.0.0",
+        "autoprefixer": "^10.4.0",
+        "babel-loader": "^8.2.0",
+        "commitizen": "^4.3.1",
+        "css-loader": "^6.5.0",
+        "css-minimizer-webpack-plugin": "^4.0.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.7.0",
+        "mini-css-extract-plugin": "^2.5.0",
+        "postcss-loader": "^6.2.0",
+        "sass": "^1.49.0",
+        "sass-loader": "^12.4.0",
+        "standard-version": "^9.5.0",
+        "style-loader": "^3.3.0",
+        "terser-webpack-plugin": "^5.3.0",
+        "webpack": "^5.68.0",
+        "webpack-cli": "^4.9.0"
     },
     "browserslist": [
-      "extends @wordpress/browserslist-config"
+        "extends @wordpress/browserslist-config"
     ]
-  }
+}
