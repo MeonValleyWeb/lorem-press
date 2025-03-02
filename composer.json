@@ -1,5 +1,5 @@
 {
-    "name": "MeonValleyWeb/lorem-press",
+    "name": "meonvalleyweb/lorem-press",
     "description": "A modern content generator for WordPress with support for posts, users, terms, comments and meta fields.",
     "type": "wordpress-plugin",
     "license": "GPL-3.0-or-later",
