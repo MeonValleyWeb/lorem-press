@@ -41,7 +41,7 @@
         "standard-version": "^9.5.0",
         "style-loader": "^3.3.0",
         "terser-webpack-plugin": "^5.4.0",
-        "webpack": "^5.68.0",
+        "webpack": "^5.105.4",
         "webpack-cli": "^4.9.0"
     },
     "browserslist": [
